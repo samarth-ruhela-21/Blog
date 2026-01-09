@@ -1,6 +1,7 @@
 import React from 'react'
 import { assets } from '../../assets/assets';
 import { useAppContext } from '../../context/AppContext';
+import toast from 'react-hot-toast';
 
 const BlogTableItem = ({blog, fetchBlogs, index}) => {
 
@@ -13,7 +14,7 @@ const BlogTableItem = ({blog, fetchBlogs, index}) => {
       const confirm = window.confirm("Are you sure you want to delte this blog?")
       if(!confirm) return;
       try {
-        const {data} = await axios.post('api/blog/delete', {id: blog._id})
+        const {data} = await axios.post('/api/blog/delete', {id: blog._id})
         if(data.success){
           toast.success(data.message)
           await fetchBlogs()

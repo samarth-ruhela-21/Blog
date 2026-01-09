@@ -1,6 +1,7 @@
 import React from 'react'
 import { assets } from '../../assets/assets';
 import { useAppContext } from '../../context/AppContext';
+import toast from 'react-hot-toast';
 
 const CommentTableItem = ({comment, fetchComments}) => {
 
@@ -28,7 +29,7 @@ const CommentTableItem = ({comment, fetchComments}) => {
             const confirm = window.confirm("Are you sure you want to delete this comment?")
             if(!confirm) return;
 
-            const {data} = axios.post('/api/admin/delete-comment', {id: _id})
+            const {data} = await axios.post('/api/admin/delete-comment', {id: _id})
             if(data.success){
                 toast.success(data.message)
                 fetchComments()

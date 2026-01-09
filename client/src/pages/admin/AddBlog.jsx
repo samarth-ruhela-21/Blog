@@ -93,7 +93,7 @@ const AddBlog = () => {
 ' onChange={e=> setTitle(e.target.value)} value={title}/>
 
         <p className='mt-4'>Sub Title</p>
-        <input type="text" placeholder='Type here' required className='w-full max-w-lg mt-2 p-2 border border-gray-400 outline-none rounded
+        <input type="text" placeholder='Type here' className='w-full max-w-lg mt-2 p-2 border border-gray-400 outline-none rounded
 ' onChange={e=> setSubTitle(e.target.value)} value={subTitle}/>
 
         <p className='mt-4'>Blog Description</p>
